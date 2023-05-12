@@ -189,7 +189,7 @@ main {
     margin-top: 10px;
     display: flex;
     flex-direction: row;
-    border-radius: 100px;
+    border-radius: 50px;
     border: none;
     max-width: 850px;
     background: var(--main-bg-light);
