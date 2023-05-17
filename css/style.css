@@ -75,6 +75,12 @@ header {
     cursor: pointer;
 }
 
+.header__menu__btns {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+}
+
 .navigation {
     display: flex;
     align-items: center;
@@ -487,11 +493,14 @@ footer {
 
     .header__menu {
         display: block;
-        margin-right: 30px;
     }
 
     .header__btns {
         display: none;
+    }
+
+    .header__menu__btns {
+        display: flex;
     }
 
     .we__title {
