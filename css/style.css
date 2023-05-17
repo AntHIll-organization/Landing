@@ -36,7 +36,7 @@ html, body {
     bottom: 0;
     width: 100%;
     height: 1px;
-    background: var(--main-bg-light);
+    background: #E9E9E9;
     border-radius: 100px;
     opacity: 0;
     transition: 0.5s all ease-in-out;
@@ -300,6 +300,10 @@ main {
     justify-content: space-between;
 }
 
+.skills-images--space {
+    padding: 0;
+}
+
 .skills-images img {
     filter: grayscale(1);
     cursor: pointer;
@@ -398,6 +402,27 @@ footer {
     cursor: pointer;
 }
 
+.footer-social__svg {
+    fill: white;
+    transition: 0.5s all ease-in-out;
+}
+
+.footer-social__link:hover .footer-social__svg--github{
+    fill: white;
+}
+
+.footer-social__link:hover .footer-social__svg--discord {
+    fill: #6665D2;
+}
+
+.footer-social__link:hover .footer-social__svg--telegram {
+    fill: #0088CC;
+}
+
+.footer-social__link:hover .footer-social__svg--youtube {
+    fill: #FF0000;
+}
+
 .block--animate-right {
     opacity: 0;
     transform: translateX(70px);
@@ -439,7 +464,7 @@ footer {
         background-color: black;
         border-radius: 0 1em 1em 0;
         box-shadow: 0 0 15px rgba(128, 128, 128, 0.5);
-        left: -110%;
+        right: -110%;
         transition: left 300ms ease;
     }
 

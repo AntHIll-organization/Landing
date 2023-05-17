@@ -26,13 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
     burgerBtn.addEventListener('click', (e) => {
         menu.classList.add('active')
         setTimeout(() => {
-            menu.style.left = 0 + '%'
+            menu.style.right = 0 + '%'
         }, 1)
     })
 
     document.addEventListener('click', (e) => {
         if (menu.classList.contains("active")) {
-            menu.style.left = -110 + '%'
+            menu.style.right = -110 + '%'
         }
 
     })
