@@ -9,7 +9,7 @@
         <link rel="icon" href="favicon.ico">
         <meta name="author" content="AntHill">
         <meta name="description" content="The best community in the world!">
-        <title>AntHill</title>
+        <title>Our Team ::: AntHill</title>
     </head>
     <body>
         <header class="fly_down" style="--animDuration: 0.5s; --animDelay: 2.5s;">
@@ -44,18 +44,15 @@
         </header>
         <main>
             <center>
-                <h1 class="big_title fade_in" style="--animDuration: 2s; --animDelay: 0s;">Hello!</h1>
+                <h1 class="big_title fade_in" style="--animDuration: 2s; --animDelay: 0s;">AntHill Development Team</h1>
                 <p class="fade_in" style="--animDuration: 1s; --animDelay: 2s;">
-                    We are <b>AntHill</b> - a community of developers and designers.<br>
-                    Developing cool projects, communicating and sharing valuable skills - that's all here!
+                    Discover who are we and what we are doing :)
                 </p>
+                <br><br>
             </center>
-            <div class="decor circle_navy" style="left: 50%; top: 125%;"></div>
-            <div class="decor terminal monofont fade_in" id="terminal" style="top: 75%; --animDuration: 1s; --animDelay: 3s;">
-                root@localhost:~# ls<br>
-                Coding&emsp14;&emsp14;WebDesign&emsp14;&emsp14;CoolStuff&emsp14;&emsp14;NiceGuys<br>
-                root@localhost:~# _
-            </div>
+            <center id="team_display" class="fade_in" style="--animDuration: 0.5s; --animDelay: 2.5s;">
+                <!-- Team members will appear here! (see team.js for further details) -->
+            </center>
         </main>
         <footer>
             <div>
@@ -69,10 +66,6 @@
         </footer>
 		<script src="scripts/main.js" lang="JavaScript"></script>
         <script src="scripts/animations.js" lang="JavaScript"></script>
-        <script>
-            document.addEventListener("mousemove", function (e) {
-                anim_terminal(e.clientX, e.clientY);
-            });
-        </script>
+        <script src="scripts/team.js" lang="JavaScript"></script>
     </body>
 </html>

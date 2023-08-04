@@ -1,0 +1,35 @@
+/*
+
+This CSS file contains all information about fonts we will use on our website
+
+*/
+
+/* Load Inter and JetBrains Mono fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Inter:wght@300;400;500&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif; font-size: 24px;
+}
+
+textarea, input { font-family: 'JetBrains Mono', monospace; }
+
+h1, h2, h3, h4, h5, h6 { font-family: 'Comfortaa', sans-serif; font-weight: 300; }
+
+.title {
+    font-family: 'Comfortaa', sans-serif;
+    color: inherit;
+    transition: var(--trDeltaOut);
+}
+.title:hover {
+    color: inherit; text-shadow: 0px 0px 10px var(--fgMain);
+    transition: var(--trDeltaIn);
+}
+.title:active {
+    color: inherit; text-shadow: 0px 0px 20px var(--fgMain);
+    transition: var(--trDeltaIn);
+}
+
+.small_title { font-size: 36px; }
+.big_title { font-size: 72px; }
+.giant_title { font-size: 144px; }
