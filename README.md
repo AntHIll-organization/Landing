@@ -1,4 +1,4 @@
-# AntHill Developers Team Landing
+# Anthill Developers Team Landing
 
 Лендинг для информирования людей о сообществе AntHill
 
