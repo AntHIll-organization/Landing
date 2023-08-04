@@ -9,11 +9,11 @@
         <link rel="icon" href="favicon.ico">
         <meta name="author" content="AntHill">
         <meta name="description" content="The best community in the world!">
-        <title>Our Team ::: AntHill</title>
+        <title>Our Team ::: Anthill</title>
     </head>
     <body>
         <header class="fly_down" style="--animDuration: 0.5s; --animDelay: 2.5s;">
-                <a href="index.html" class="title small_title noselect">AntHill</a>
+                <a href="index.html" class="title small_title website_title noselect">Anthill</a>
                 <div class="menupanel round">
                     <a href="about.html" class="menubutton round">
                         <span class="material-symbols-outlined">info</span>
@@ -35,28 +35,107 @@
                         Team
                     </a>
                     &emsp;
-                    <a href="sign.html" class="grbutton round">
+                    <div class="grbutton round" onclick="show_sign_form()">
                         <span class="material-symbols-outlined">manage_accounts</span>
                         Sign in/up
-                    </a>
+                    </div>
                 </div>
-                <div class="button round"><span class="material-symbols-outlined">language</span> English</div>
+                <div class="flex">
+                    <div class="button round">
+                        <span class="material-symbols-outlined">language</span>
+                    </div>
+                    <div class="button round">
+                        <span class="material-symbols-outlined">brightness_6</span>
+                    </div>
+                </div>
+                <div class="sign_form" id="my_sign_form">
+                    <center>
+                        <div>
+                            <br><br><br><br>
+                            <h1>Sign in/up</h1>
+                            <br><br>
+                            <input type="text" class="textbox roundleft" id="userbox" placeholder="Username"><input type="password" class="textbox roundright" id="pwdbox" placeholder="Password">
+                            <br><br>
+                            <input type="button" class="button round" id="signinbutton" value="Sign in">
+                            <input type="button" class="grbutton round" id="signupbutton" value="Sign up">
+                            <br><br><br><br>
+                            <span class="material-symbols-outlined">warning</span>
+                            Account system is currently not working (because it does not exist). This form is just placeholder.<br>
+                            Stay tuned!
+                            <br><br>
+                        </div>
+                    </center>   
+                </div>
         </header>
-        <main>
+        <main id="main_container" class="fullheight" onclick="hide_sign_form()">
             <center>
-                <h1 class="big_title fade_in" style="--animDuration: 2s; --animDelay: 0s;">AntHill Development Team</h1>
+                <h1 class="big_title fade_in" style="--animDuration: 2s; --animDelay: 0s;">Anthill Development Team</h1>
                 <p class="fade_in" style="--animDuration: 1s; --animDelay: 2s;">
                     Discover who are we and what we are doing :)
                 </p>
                 <br><br>
             </center>
             <center id="team_display" class="fade_in" style="--animDuration: 0.5s; --animDelay: 2.5s;">
+
                 <!-- Team members will appear here! (see team.js for further details) -->
+
+                <div class="teammate title">
+                    <img class="teammate_avatar" src="assets/img/artem_kuznetsov.jpg">
+                    <div class="teammate_info">
+                        <h1>Artem Kuznetsov</h1>
+                        <p>${description}</p>
+                        <p>${socials}</p>
+                    </div>
+                </div>     
+                <br>             
+
+                <div class="teammate title">
+                    <img class="teammate_avatar" src="assets/img/ivan_covach.jpg">
+                    <div class="teammate_info">
+                        <h1>Ivan Covach</h1>
+                        <p>I confuse left and right, punk, like math (definitely punk), bad at Russian writing, love rice👍.I'm on Arch - why? Because. I was born with a soldering iron in my hands. I've flown around the nearest star 17 times. I've seen a baby pigeon, I have personalized chopsticks, and I think I can program something.</p>
+                        <p>${socials}</p>
+                    </div>
+                </div>
+                <br>
+                
+                <div class="teammate title">
+                    <img class="teammate_avatar" src="assets/img/ivan_movchan.jpg">
+                    <div class="teammate_info">
+                        <h1>Ivan Movchan</h1>
+                        <p>Developing free (as in freedom) software<br>
+                           Trying myself in web design and electronic music<br>
+                           By the way I use Arch Linux 😀</p>
+                        <p><a href="https://nobootrecord.github.io">https://nobootrecord.github.io</a></p>
+                    </div>
+                </div> 
+                <br>  
+
+                <div class="teammate title">
+                    <img class="teammate_avatar" src="assets/img/nikolai_denisov.jpg">
+                    <div class="teammate_info">
+                        <h1>Nikolai Denisov</h1>
+                        <p>&lt;description not found&gt;</p>
+                        <p>${socials}</p>
+                    </div>
+                </div>
+                <br>
+
+                <div class="teammate title">
+                    <img class="teammate_avatar" src="assets/img/mikhail_beskin.jpg">
+                    <div class="teammate_info">
+                        <h1>Mikhail Beskin</h1>
+                        <p>Misha is a dude from Belarus. He's been doing programming and everything related to it for several years now. He wants to create the best organization in the world!</p>
+                        <p>${socials}</p>
+                    </div>
+                </div>
+                <br>
+
             </center>
         </main>
         <footer>
             <div>
-                Copyright &copy; the best community in the world, 2022 - 2023</a>
+                Copyright &copy; the best community in the world, 2023</a>
             </div>
             <div>
                 <a href="https://github.com/AntHill-dev"><img class="social" src="assets/img/github.png" alt="GitHub" title="GitHub"></a>
@@ -66,6 +145,12 @@
         </footer>
 		<script src="scripts/main.js" lang="JavaScript"></script>
         <script src="scripts/animations.js" lang="JavaScript"></script>
-        <script src="scripts/team.js" lang="JavaScript"></script>
+        <!-- 
+            
+            TEMPORARELY DISABLED
+
+            <script src="scripts/team.js" lang="JavaScript"></script>
+        
+        -->
     </body>
 </html>

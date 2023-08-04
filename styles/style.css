@@ -14,7 +14,7 @@ This CSS file describes main webpage styles (header, footer, etc.)
     --padPanel: 16px 16px;
     --mrgButtonV: 0px;
     --mrgButtonH: 4px;
-    --blurMain: blur(8px);
+    --blurMain: blur(16px);
     --circleRadius: 40vw;
     --cubeSize: 20vw;
 }
@@ -38,6 +38,7 @@ footer {
 
 main {
     min-height: 200vh; padding: 10vw;
+    transition: 2s ease;
 }
 
 a { color: inherit; text-decoration: none; transition: var(--trDeltaOut); }
@@ -82,6 +83,7 @@ textarea { text-align: left; border: 1px solid var(--fgMain); }
     --fgHover: blue;
     --fgActive: magenta;
     --candyGradient: linear-gradient(to right bottom, blue, magenta);
+    --rainbow: linear-gradient(to right bottom, red, yellow, lime, blue, cyan, magenta);
 }
 
 /* Scrollbar */
@@ -102,7 +104,7 @@ textarea { text-align: left; border: 1px solid var(--fgMain); }
 }
 
 header {
-    background: transparent; backdrop-filter: var(--blurMain);
+    background: transparent; backdrop-filter: var(--blurMain); box-shadow: 0px 0px 32px var(--bgMain);
 }
 
 pre { font-family: 'JetBrains Mono', monospace; }
@@ -145,6 +147,11 @@ pre { font-family: 'JetBrains Mono', monospace; }
 
 .grtext {
     background: var(--candyGradient);
+    background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.rainbowtext {
+    background: var(--rainbow);
     background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
 
@@ -208,6 +215,19 @@ input[type=button] {
 
 .social { width: 48px; height: 48px; margin: 0px 8px; }
 
+.platform {
+    cursor: pointer; user-select: none;
+    position: relative;
+    width: 128px; height: 128px;
+    animation: anim_platform 1s var(--animDelay) infinite ease;
+}
+
+@keyframes anim_platform {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
 .round { border-radius: var(--roundRadius); }
 .roundleft { border-radius: var(--roundRadius) 0px 0px var(--roundRadius); }
 .roundright { border-radius: 0px var(--roundRadius) var(--roundRadius) 0px; }
@@ -215,6 +235,7 @@ input[type=button] {
 .rounddown { border-radius: 0px 0px var(--roundRadius) var(--roundRadius); }
 .roundfull { border-radius: var(--roundFullRadius); }
 
+.flex { display: flex; }
 .inline { display: inline; }
 .noselect { user-select: none; }
 
@@ -222,7 +243,7 @@ input[type=button] {
 	position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
 }
 
-.monofont { font-family: 'JetBrains Mono', monospace; }
+.monofont, pre { font-family: 'JetBrains Mono', monospace; }
 
 .fullwidth { min-width: 100vw; }
 .fullheight { min-height: 100vh; }
@@ -241,7 +262,7 @@ Decorations
     background: radial-gradient(circle at center, navy 1%, transparent 50%); background-size: 100vw 100vw; background-position: center; background-repeat: no-repeat;
 }
 
-/* 3D cube :D */
+/* 3D cube */
 
 .cube_cont {
     z-index: -1; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
@@ -294,20 +315,20 @@ Decorations
     100% { perspective: calc(var(--cubeSize) / 9); }
 }
 
-/* See 'scripts/animations.js' for further details! */
+/* Terminal.
+   See 'scripts/animations.js' for further details! */
 
 .terminal {
-    width: 75vw; height: 20vh; padding: 8px;
-    background: var(--bgSemiAlpha); color: var(--fgTerminal);
+    width: 75vw; height: 25vh; padding: 16px;
+    background: var(--bgMain); color: var(--fgTerminal);
     box-shadow: 0px 0px 4px var(--fgMain); border-radius: var(--roundRadius);
-    backdrop-filter: var(--blurMain);
     transform: rotateX(var(--rotX)) rotateY(var(--rotY)) rotateZ(var(--rotZ));
 }
 
 .teammate {
-    width: 75vw; min-height: 25vh; padding: 16px;
+    width: 75vw; height: 256px; padding: 64px;
     transform: scale(0.95);
-    display: flex; justify-content: center; align-items: center;
+    display: flex;
     background: var(--bgButtonPanel); color: var(--fgMain); backdrop-filter: var(--blurMain); border-radius: var(--roundRadius);
     box-shadow: 0px 0px 8px var(--fgMain);
     transition: var(--trDeltaOut);
@@ -319,12 +340,48 @@ Decorations
     transition: var(--trDeltaIn);    
 }
 .teammate_avatar {
+    position: absolute; left: 32px; top: 32px;
     width: 256px; height: 256px;
-    border-radius: var(--roundFullRadius); box-shadow: 0px 0px 8px var(--fgMain);
-    transition: var(--trDeltaOut); 
+    border-radius: var(--roundFullRadius);
 }
-.teammate_avatar:hover {
-    border-radius: var(--roundFullRadius); box-shadow: 0px 0px 32px var(--fgMain);
-    transition: var(--trDeltaIn); 
+.teammate_info { text-align: left; margin-left: 298px; margin-top: -48px; }
+
+/* Sign in/up form */
+
+.sign_form {
+    z-index: 1;
+    position: absolute; top: 0; left: 0; width: 100%; height: 80vh;
+    transform: translateY(-80vh);
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    background: var(--fgMain); color: var(--bgMain);
+    transition: 2s ease;
 }
-.teammate_info { text-align: left; margin-left: 10vw; }
+
+/* Windows :D */
+
+.window {
+    border-radius: var(--roundRadius);
+    border: var(--fgMain); box-shadow: 0px 0px 8px var(--fgMain);
+    width: fit-content; height: fit-content;
+}
+.window_titlebar {
+    padding: 8px; border-radius: var(--roundRadius) var(--roundRadius) 0px 0px;
+    background: var(--candyGradient);
+}
+.window_client {
+    padding: 4px;
+    background: var(--bgMain); color: var(--fgMain);
+}
+
+/* Webpage last section */
+
+.last_section {
+    background: linear-gradient(to top, var(--fgMain), var(--bgMain)); color: var(--fgMain); margin-top: -5vh;
+}
+
+/* A little tweak for light mode enjoyers */
+
+@media (prefers-color-scheme: light)
+{
+	.social, .stripes { filter: invert(100%); }
+}
