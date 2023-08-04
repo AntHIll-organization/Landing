@@ -1,0 +1,23 @@
+/*
+
+This CSS file describes everything about... animations :)
+
+*/
+
+@keyframes anim_hue {
+    to { filter: hue-rotate(360deg); }
+}
+
+@keyframes anim_fly {
+    to { transform: inherit; }
+}
+.fly_left { transform: translate(100vw, 0%); animation: anim_fly var(--animDuration) var(--animDelay) 1 ease forwards; }
+.fly_right { transform: translate(-100vw, 0%); animation: anim_fly var(--animDuration) var(--animDelay) 1 ease forwards; }
+.fly_up { transform: translate(0%, 100vh); animation: anim_fly var(--animDuration) var(--animDelay) 1 ease forwards; }
+.fly_down { transform: translate(0%, -100vh); animation: anim_fly var(--animDuration) var(--animDelay) 1 ease forwards; }
+
+@keyframes anim_fade {
+    to { opacity: inherit; }
+}
+.fade_in { opacity: 0; animation: anim_fade var(--animDuration) var(--animDelay) 1 ease forwards; }
+.fade_out { opacity: 1; animation: anim_fade var(--animDuration) var(--animDelay) 1 ease forwards; }
