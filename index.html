@@ -9,11 +9,11 @@
         <link rel="icon" href="favicon.ico">
         <meta name="author" content="AntHill">
         <meta name="description" content="The best community in the world!">
-        <title>AntHill</title>
+        <title>Home ::: Anthill</title>
     </head>
     <body>
         <header class="fly_down" style="--animDuration: 0.5s; --animDelay: 2.5s;">
-                <a href="index.html" class="title small_title noselect">AntHill</a>
+                <a href="index.html" class="title small_title website_title noselect">Anthill</a>
                 <div class="menupanel round">
                     <a href="about.html" class="menubutton round">
                         <span class="material-symbols-outlined">info</span>
@@ -35,31 +35,131 @@
                         Team
                     </a>
                     &emsp;
-                    <a href="sign.html" class="grbutton round">
+                    <div class="grbutton round" onclick="show_sign_form()">
                         <span class="material-symbols-outlined">manage_accounts</span>
                         Sign in/up
-                    </a>
+                    </div>
                 </div>
-                <div class="button round"><span class="material-symbols-outlined">language</span> English</div>
+                <div class="flex">
+                    <div class="button round">
+                        <span class="material-symbols-outlined">language</span>
+                    </div>
+                    <div class="button round">
+                        <span class="material-symbols-outlined">brightness_6</span>
+                    </div>
+                </div>
+                <div class="sign_form" id="my_sign_form">
+                    <center>
+                        <div>
+                            <br><br><br><br>
+                            <h1>Sign in/up</h1>
+                            <br><br>
+                            <input type="text" class="textbox roundleft" id="userbox" placeholder="Username"><input type="password" class="textbox roundright" id="pwdbox" placeholder="Password">
+                            <br><br>
+                            <input type="button" class="button round" id="signinbutton" value="Sign in">
+                            <input type="button" class="grbutton round" id="signupbutton" value="Sign up">
+                            <br><br><br><br>
+                            <span class="material-symbols-outlined">warning</span>
+                            Account system is currently not working (because it does not exist). This form is just placeholder.<br>
+                            Stay tuned!
+                            <br><br>
+                        </div>
+                    </center>   
+                </div>
         </header>
-        <main>
+        <main id="main_container" class="fullheight" onclick="hide_sign_form()">
             <center>
-                <h1 class="big_title fade_in" style="--animDuration: 2s; --animDelay: 0s;">Hello!</h1>
-                <p class="fade_in" style="--animDuration: 1s; --animDelay: 2s;">
+                <h1 class="big_title title fade_in" style="--animDuration: 2s; --animDelay: 0s;">Hello!</h1>
+                <p class="title fade_in" style="--animDuration: 1s; --animDelay: 2s;">
                     We are <b>AntHill</b> - a community of developers and designers.<br>
                     Developing cool projects, communicating and sharing valuable skills - that's all here!
                 </p>
             </center>
             <div class="decor circle_navy" style="left: 50%; top: 125%;"></div>
             <div class="decor terminal monofont fade_in" id="terminal" style="top: 75%; --animDuration: 1s; --animDelay: 3s;">
-                root@localhost:~# ls<br>
-                Coding&emsp14;&emsp14;WebDesign&emsp14;&emsp14;CoolStuff&emsp14;&emsp14;NiceGuys<br>
                 root@localhost:~# _
             </div>
         </main>
+        <main>
+            <center>
+                <div class="fade_in" style="--animDuration: 0.5s; --animDelay: 4s;">
+                    <img class="teammate_avatar"
+                         src="assets/img/artem_kuznetsov.jpg"
+                         style="position: relative; left: -10vw; top: 55vh;"                   
+                    >
+                    <img class="teammate_avatar"
+                         src="assets/img/ivan_covach.jpg"
+                         style="position: relative; left: -15vw; top: 100vh;"                   
+                    >
+                    <img class="teammate_avatar"
+                         src="assets/img/mikhail_beskin.jpg"
+                         style="position: relative; left: 15vw; top: 20vh;"                   
+                    >
+                    <img class="teammate_avatar"
+                         src="assets/img/nikolai_denisov.jpg"
+                         style="position: relative; left: 20vw; top: 70vh;"                   
+                    >
+                    <img class="teammate_avatar"
+                         src="assets/img/ivan_movchan.jpg"
+                         style="position: relative; left: 10vw; top: 120vh;"                   
+                    >
+                </div>
+                <div class="window fade_in" style="z-index: -1; position: relative; margin-top: 25vh; --animDuration: 0.5s; --animDelay: 4s;">
+                    <div class="window_titlebar title">/usr/bin/donut</div>
+                    <div class="window_client">
+                        <pre id="donut"></pre>
+                    </div>
+                </div>
+                <br><br><br><br>
+                <h1 class="fade_in" style="--animDuration: 0.5s; --animDelay: 4.5s;">
+                    Our community brought together guys<br>
+                    from <span class="rainbowtext" style="animation: anim_hue 3s 0s infinite linear;">different</span> countries and cities
+                </h1>
+                <br><br><br><br><br><br><br><br>
+                <div class="fade_in" style="--animDuration: 1s; --animDelay: 5s;">
+                    <img src="assets/img/react.svg" class="platform" style="--animDelay: 0.1s;">
+                    &emsp;
+                    <img src="assets/img/python.svg" class="platform" style="--animDelay: 0.2s;">
+                    &emsp;
+                    <img src="assets/img/java.svg" class="platform" style="--animDelay: 0.3s;">
+                    &emsp;
+                    <img src="assets/img/wordpress.svg" class="platform" style="--animDelay: 0.4s;">
+                    &emsp;
+                    <img src="assets/img/figma.svg" class="platform" style="--animDelay: 0.5s;">
+                    &emsp;
+                    <img src="assets/img/squarespace.svg" class="platform" style="--animDelay: 0.6s;">
+                    &emsp;
+                    <img src="assets/img/github.svg" class="platform" style="--animDelay: 0.7s;">
+                    &emsp;
+                    <img src="assets/img/discord.svg" class="platform" style="--animDelay: 0.8s;">
+                    &emsp;
+                    <img src="assets/img/jira.svg" class="platform" style="--animDelay: 0.9s;">
+                    <br><br><br><br>
+                    <h1>
+                        We work on cool projects and<br>
+                        <span class="rainbowtext" style="animation: anim_hue 3s 0s infinite linear;">develop ourselves</span>
+                    </h1>
+                </div>
+            </center>
+            <script src="scripts/donut/lib.js"></script>
+            <script src="scripts/donut/index.js"></script>
+            <script src="scripts/donut/main.js"></script>
+        </main>
+        <img class="stripes" src="assets/img/stripes.png" width="100%" height="100%">
+        <div class="last_section">
+            <br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br>
+            <center class="fade_in" style="--animDuration: 1s; --animDelay: 6s;">
+                <h1>We are creating the future</h1>
+                <h3>Join us, if you want too 😉</h3>
+                See our social medias on the footer for further information. Let's change the world together...
+            </center>
+            <br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br>
+        </div>
         <footer>
             <div>
-                Copyright &copy; the best community in the world, 2022 - 2023</a>
+                Copyright &copy; the best community in the world, 2023
             </div>
             <div>
                 <a href="https://github.com/AntHill-dev"><img class="social" src="assets/img/github.png" alt="GitHub" title="GitHub"></a>

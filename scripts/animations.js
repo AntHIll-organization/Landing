@@ -6,6 +6,7 @@
 //
 // Rotating terminal window on main website page
 // depending on mouse cursor position
+//
 
 function anim_terminal(mouseX, mouseY) // We can get mouseX & mouseY by using 'mousemove' event listener
 {

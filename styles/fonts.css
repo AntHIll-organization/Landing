@@ -18,16 +18,10 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Comfortaa', sans-serif; font-weight: 300;
 
 .title {
     font-family: 'Comfortaa', sans-serif;
-    color: inherit;
-    transition: var(--trDeltaOut);
 }
-.title:hover {
-    color: inherit; text-shadow: 0px 0px 10px var(--fgMain);
-    transition: var(--trDeltaIn);
-}
-.title:active {
-    color: inherit; text-shadow: 0px 0px 20px var(--fgMain);
-    transition: var(--trDeltaIn);
+
+.website_title {
+    text-shadow: 0px 0px 8px var(--bgMain);
 }
 
 .small_title { font-size: 36px; }
