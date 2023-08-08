@@ -282,27 +282,27 @@ Decorations
     opacity: 1;
 }
 .cube_front {
-    background: var(--bgSemiAlpha); box-shadow: 0px 0px calc(var(--cubeSize)) red; border: 1px solid red;
+    background: var(--bgSemiAlpha); box-shadow: 0px 0px calc(var(--cubeSize) / 4) red; border: 1px solid red;
     transform: rotateY(0deg) translateZ(calc(var(--cubeSize) / 2));
 }
 .cube_back {
-    background: var(--bgSemiAlpha); box-shadow: 0px 0px calc(var(--cubeSize)) cyan; border: 1px solid cyan;
+    background: var(--bgSemiAlpha); box-shadow: 0px 0px calc(var(--cubeSize) / 4) cyan; border: 1px solid cyan;
     transform: rotateY(180deg) translateZ(calc(var(--cubeSize) / 2));
 }
 .cube_left {
-    background: var(--bgSemiAlpha); box-shadow: 0px 0px calc(var(--cubeSize)) lime; border: 1px solid lime;
+    background: var(--bgSemiAlpha); box-shadow: 0px 0px calc(var(--cubeSize) / 4) lime; border: 1px solid lime;
     transform: rotateY(-90deg) translateZ(calc(var(--cubeSize) / 2));
 }
 .cube_right {
-    background: var(--bgSemiAlpha); box-shadow: 0px 0px calc(var(--cubeSize)) magenta; border: 1px solid magenta;
+    background: var(--bgSemiAlpha); box-shadow: 0px 0px calc(var(--cubeSize) / 4) magenta; border: 1px solid magenta;
     transform: rotateY(90deg) translateZ(calc(var(--cubeSize) / 2));
 }
 .cube_top {
-    background: var(--bgSemiAlpha); box-shadow: 0px 0px calc(var(--cubeSize)) blue; border: 1px solid blue;
+    background: var(--bgSemiAlpha); box-shadow: 0px 0px calc(var(--cubeSize) / 4) blue; border: 1px solid blue;
     transform: rotateX(90deg) translateZ(calc(var(--cubeSize) / 2));
 }
 .cube_bottom {
-    background: var(--bgSemiAlpha); box-shadow: 0px 0px calc(var(--cubeSize)) yellow; border: 1px solid yellow;
+    background: var(--bgSemiAlpha); box-shadow: 0px 0px calc(var(--cubeSize) / 4) yellow; border: 1px solid yellow;
     transform: rotateX(-90deg) translateZ(calc(var(--cubeSize) / 2));
 }
 
