@@ -15,7 +15,3 @@
 - [Lapxi010](https://github.com/Lapxi010)
 - [Qu1nel](https://github.com/Qu1nel)
 - [MikhailBeskin](https://github.com/MikhailBeskin), [NobootRecord](https://github.com/NobootRecord) (new design)
-
-### Original repository is located [here](https://github.com/AntHill-dev/Landing).
-
-This repository is created temporarely and will be removed later. Thanks for attention!
