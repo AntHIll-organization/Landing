@@ -15,36 +15,28 @@
         <header class="fly_down" style="--animDuration: 0.5s; --animDelay: 2.5s;">
                 <a href="index.html" class="title small_title website_title noselect">Anthill</a>
                 <div class="menupanel round">
-                    <a href="about.html" class="menubutton round">
+                    <a href="about.html" class="menubutton roundleft">
                         <span class="material-symbols-outlined">info</span>
                         About
-                    </a>
-                    &emsp;
-					<a href="blog/index.html" class="menubutton round">
+                    </a><a href="blog/index.html" class="menubutton">
                         <span class="material-symbols-outlined">feed</span>
                         Blog
-                    </a>
-                    &emsp;
-                    <a href="works.html" class="menubutton round">
+                    </a><a href="works.html" class="menubutton">
                         <span class="material-symbols-outlined">work</span>
                         Works
-                    </a>
-                    &emsp;
-                    <a href="team.html" class="menubutton round">
+                    </a><a href="team.html" class="menubutton roundright">
                         <span class="material-symbols-outlined">engineering</span>
                         Team
                     </a>
-                    &emsp;
-                    <div class="grbutton round" onclick="show_sign_form()">
-                        <span class="material-symbols-outlined">manage_accounts</span>
-                        Sign in/up
-                    </div>
                 </div>
                 <div class="flex">
+                    <div class="button round" onclick="show_sign_form()">
+                        <span class="material-symbols-outlined">manage_accounts</span>
+                    </div>
                     <div class="button round">
                         <span class="material-symbols-outlined">language</span>
                     </div>
-                    <div class="button round">
+                    <div class="button round" onclick="toggle_dark_mode()">
                         <span class="material-symbols-outlined">brightness_6</span>
                     </div>
                 </div>
@@ -56,8 +48,7 @@
                             <br><br>
                             <input type="text" class="textbox roundleft" id="userbox" placeholder="Username"><input type="password" class="textbox roundright" id="pwdbox" placeholder="Password">
                             <br><br>
-                            <input type="button" class="button round" id="signinbutton" value="Sign in">
-                            <input type="button" class="grbutton round" id="signupbutton" value="Sign up">
+                            <input type="button" class="button round" value="Sign in"><input type="button" class="button round" value="Sign up">
                             <br><br><br><br>
                             <span class="material-symbols-outlined">warning</span>
                             Account system is currently not working (because it does not exist). This form is just placeholder.<br>
@@ -75,10 +66,16 @@
                     Developing cool projects, communicating and sharing valuable skills - that's all here!
                 </p>
             </center>
-            <div class="decor circle_navy" style="left: 50%; top: 125%;"></div>
-            <div class="decor terminal monofont fade_in" id="terminal" style="top: 75%; --animDuration: 1s; --animDelay: 3s;">
-                root@localhost:~# _
-            </div>
+            <br><br>
+            <center>
+                <div class="window fade_in" style="--animDuration: 1s; --animDelay: 2.5s;">
+                    <div class="window_titlebar title">ahterm</div>
+                    <div class="terminal monofont window_client" id="terminal">
+                        root@localhost:~# 
+                        <span class='terminal_cursor'>_</span>
+                    </div>
+                </div>
+            </center>
         </main>
         <main>
             <center>
@@ -105,7 +102,7 @@
                     >
                 </div>
                 <div class="window fade_in" style="z-index: -1; position: relative; margin-top: 25vh; --animDuration: 0.5s; --animDelay: 4s;">
-                    <div class="window_titlebar title">/usr/bin/donut</div>
+                    <div class="window_titlebar title">ahdonut</div>
                     <div class="window_client">
                         <pre id="donut"></pre>
                     </div>
@@ -113,7 +110,7 @@
                 <br><br><br><br>
                 <h1 class="fade_in" style="--animDuration: 0.5s; --animDelay: 4.5s;">
                     Our community brought together guys<br>
-                    from <span class="rainbowtext" style="animation: anim_hue 3s 0s infinite linear;">different</span> countries and cities
+                    from <span class="inverse_text" style="animation: anim_hue 3s 0s infinite linear;">different</span> countries and cities
                 </h1>
                 <br><br><br><br><br><br><br><br>
                 <div class="fade_in" style="--animDuration: 1s; --animDelay: 5s;">
@@ -137,7 +134,7 @@
                     <br><br><br><br>
                     <h1>
                         We work on cool projects and<br>
-                        <span class="rainbowtext" style="animation: anim_hue 3s 0s infinite linear;">develop ourselves</span>
+                        <span class="inverse_text" style="animation: anim_hue 3s 0s infinite linear;">develop ourselves</span>
                     </h1>
                 </div>
             </center>
@@ -145,7 +142,6 @@
             <script src="scripts/donut/index.js"></script>
             <script src="scripts/donut/main.js"></script>
         </main>
-        <img class="stripes" src="assets/img/stripes.png" width="100%" height="100%">
         <div class="last_section">
             <br><br><br><br><br><br><br><br>
             <br><br><br><br><br><br><br><br>
@@ -167,12 +163,7 @@
                 <a href="https://t.me/ANTHlll"><img class="social" src="assets/img/telegram.png" alt="Telegram" title="Telegram"></a>
             </div>
         </footer>
-		<script src="scripts/main.js" lang="JavaScript"></script>
-        <script src="scripts/animations.js" lang="JavaScript"></script>
-        <script>
-            document.addEventListener("mousemove", function (e) {
-                anim_terminal(e.clientX, e.clientY);
-            });
-        </script>
+	<script src="scripts/main.js" lang="JavaScript"></script>
+    <script src="scripts/terminal.js" lang="JavaScript"></script>
     </body>
 </html>

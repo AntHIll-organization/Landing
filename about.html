@@ -13,34 +13,51 @@
     </head>
     <body>
         <header class="fly_down" style="--animDuration: 0.5s; --animDelay: 2.5s;">
-                <a href="index.html" class="title small_title noselect">Anthill</a>
-                <div class="menupanel round">
-                    <a href="about.html" class="menubutton round">
-                        <span class="material-symbols-outlined">info</span>
-                        About
-                    </a>
-                    &emsp;
-					<a href="blog/index.html" class="menubutton round">
-                        <span class="material-symbols-outlined">feed</span>
-                        Blog
-                    </a>
-                    &emsp;
-                    <a href="works.html" class="menubutton round">
-                        <span class="material-symbols-outlined">work</span>
-                        Works
-                    </a>
-                    &emsp;
-                    <a href="team.html" class="menubutton round">
-                        <span class="material-symbols-outlined">engineering</span>
-                        Team
-                    </a>
-                    &emsp;
-                    <a href="sign.html" class="grbutton round">
-                        <span class="material-symbols-outlined">manage_accounts</span>
-                        Sign in/up
-                    </a>
+            <a href="index.html" class="title small_title website_title noselect">Anthill</a>
+            <div class="menupanel round">
+                <a href="about.html" class="menubutton roundleft">
+                    <span class="material-symbols-outlined">info</span>
+                    About
+                </a><a href="blog/index.html" class="menubutton">
+                    <span class="material-symbols-outlined">feed</span>
+                    Blog
+                </a><a href="works.html" class="menubutton">
+                    <span class="material-symbols-outlined">work</span>
+                    Works
+                </a><a href="team.html" class="menubutton roundright">
+                    <span class="material-symbols-outlined">engineering</span>
+                    Team
+                </a>
+            </div>
+            <div class="flex">
+                <div class="button round" onclick="show_sign_form()">
+                    <span class="material-symbols-outlined">manage_accounts</span>
                 </div>
-                <div class="button round"><span class="material-symbols-outlined">language</span> English</div>
+                <div class="button round">
+                    <span class="material-symbols-outlined">language</span>
+                </div>
+                <div class="button round" onclick="toggle_dark_mode()">
+                    <span class="material-symbols-outlined">brightness_6</span>
+                </div>
+            </div>
+            <div class="sign_form" id="my_sign_form">
+                <center>
+                    <div>
+                        <br><br><br><br>
+                        <h1>Sign in/up</h1>
+                        <br><br>
+                        <input type="text" class="textbox roundleft" id="userbox" placeholder="Username"><input type="password" class="textbox roundright" id="pwdbox" placeholder="Password">
+                        <br><br>
+                        <input type="button" class="button round" id="signinbutton" value="Sign in">
+                        <input type="button" class="grbutton round" id="signupbutton" value="Sign up">
+                        <br><br><br><br>
+                        <span class="material-symbols-outlined">warning</span>
+                        Account system is currently not working (because it does not exist). This form is just placeholder.<br>
+                        Stay tuned!
+                        <br><br>
+                    </div>
+                </center>   
+            </div>
         </header>
         <main>
             <center class="fullheight fade_in" style="--animDuration: 2s; --animDelay: 0s;">
@@ -66,26 +83,19 @@
                 </div></div>
             </center>
             <center>
-                <div class="fade_in" style="--animDuration: 0.25s; --animDelay: 3s;">
-                    <h1 class="big_title">May 2023</h1>
-                    <p>start of the project - Discord server created</p>
+                <div class="fade_in" style="--animDuration: 1s; --animDelay: 3s; text-align: left;"
+                    AntHiLL is a tiny community of developers. We develop nice and interesting stuff like web design, desktop applications and much other.<br>
+                    AntHiLL was established in May 2023 - and in August 2023 we have launched our website.<br>
+                    <br>
+                    In our community you can share your experience, knowledges and interesting ideas. If you have interesting ideas, please get in touch with us!
                 </div>
-                <br><br>
-                <div class="fade_in" style="--animDuration: 0.25s; --animDelay: 3.25s;">
-                    <h1 class="big_title">5</h1>
-                    <p>people in our team</p>
+                <br><br><br><br>
+                <div class="window fade_in" style="--animDuration: 1s; --animDelay: 4s;">
+                    <div class="window_titlebar title">ahcontact</div>
+                    <div class="window_client">
+                        <h1>ianthill at gmail dot com</h1>
+                    </div>
                 </div>
-                <br><br>
-                <div class="fade_in" style="--animDuration: 0.25s; --animDelay: 3.5s;">
-                    <h1 class="big_title">Design, Web Development</h1>
-                    <p>that's what we do</p>
-                </div>
-                <br><br>
-                <div class="fade_in" style="--animDuration: 0.25s; --animDelay: 3.75s;">
-                    <h1 class="big_title">Belarus, Russia</h1>
-                    <p>we come from</p>
-                </div>
-                <br><br>
             </center>
         </main>
         <footer>

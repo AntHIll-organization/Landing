@@ -13,59 +13,51 @@
     </head>
     <body>
         <header class="fly_down" style="--animDuration: 0.5s; --animDelay: 2.5s;">
-                <a href="index.html" class="title small_title website_title noselect">Anthill</a>
-                <div class="menupanel round">
-                    <a href="about.html" class="menubutton round">
-                        <span class="material-symbols-outlined">info</span>
-                        About
-                    </a>
-                    &emsp;
-					<a href="blog/index.html" class="menubutton round">
-                        <span class="material-symbols-outlined">feed</span>
-                        Blog
-                    </a>
-                    &emsp;
-                    <a href="works.html" class="menubutton round">
-                        <span class="material-symbols-outlined">work</span>
-                        Works
-                    </a>
-                    &emsp;
-                    <a href="team.html" class="menubutton round">
-                        <span class="material-symbols-outlined">engineering</span>
-                        Team
-                    </a>
-                    &emsp;
-                    <div class="grbutton round" onclick="show_sign_form()">
-                        <span class="material-symbols-outlined">manage_accounts</span>
-                        Sign in/up
-                    </div>
+            <a href="index.html" class="title small_title website_title noselect">Anthill</a>
+            <div class="menupanel round">
+                <a href="about.html" class="menubutton roundleft">
+                    <span class="material-symbols-outlined">info</span>
+                    About
+                </a><a href="blog/index.html" class="menubutton">
+                    <span class="material-symbols-outlined">feed</span>
+                    Blog
+                </a><a href="works.html" class="menubutton">
+                    <span class="material-symbols-outlined">work</span>
+                    Works
+                </a><a href="team.html" class="menubutton roundright">
+                    <span class="material-symbols-outlined">engineering</span>
+                    Team
+                </a>
+            </div>
+            <div class="flex">
+                <div class="button round" onclick="show_sign_form()">
+                    <span class="material-symbols-outlined">manage_accounts</span>
                 </div>
-                <div class="flex">
-                    <div class="button round">
-                        <span class="material-symbols-outlined">language</span>
-                    </div>
-                    <div class="button round">
-                        <span class="material-symbols-outlined">brightness_6</span>
-                    </div>
+                <div class="button round">
+                    <span class="material-symbols-outlined">language</span>
                 </div>
-                <div class="sign_form" id="my_sign_form">
-                    <center>
-                        <div>
-                            <br><br><br><br>
-                            <h1>Sign in/up</h1>
-                            <br><br>
-                            <input type="text" class="textbox roundleft" id="userbox" placeholder="Username"><input type="password" class="textbox roundright" id="pwdbox" placeholder="Password">
-                            <br><br>
-                            <input type="button" class="button round" id="signinbutton" value="Sign in">
-                            <input type="button" class="grbutton round" id="signupbutton" value="Sign up">
-                            <br><br><br><br>
-                            <span class="material-symbols-outlined">warning</span>
-                            Account system is currently not working (because it does not exist). This form is just placeholder.<br>
-                            Stay tuned!
-                            <br><br>
-                        </div>
-                    </center>   
+                <div class="button round" onclick="toggle_dark_mode()">
+                    <span class="material-symbols-outlined">brightness_6</span>
                 </div>
+            </div>
+            <div class="sign_form" id="my_sign_form">
+                <center>
+                    <div>
+                        <br><br><br><br>
+                        <h1>Sign in/up</h1>
+                        <br><br>
+                        <input type="text" class="textbox roundleft" id="userbox" placeholder="Username"><input type="password" class="textbox roundright" id="pwdbox" placeholder="Password">
+                        <br><br>
+                        <input type="button" class="button round" id="signinbutton" value="Sign in">
+                        <input type="button" class="grbutton round" id="signupbutton" value="Sign up">
+                        <br><br><br><br>
+                        <span class="material-symbols-outlined">warning</span>
+                        Account system is currently not working (because it does not exist). This form is just placeholder.<br>
+                        Stay tuned!
+                        <br><br>
+                    </div>
+                </center>   
+            </div>
         </header>
         <main id="main_container" class="fullheight" onclick="hide_sign_form()">
             <center>
@@ -75,61 +67,49 @@
                 </p>
                 <br><br>
             </center>
-            <center id="team_display" class="fade_in" style="--animDuration: 0.5s; --animDelay: 2.5s;">
+            <center id="team_display" class="unblur" style="--animDuration: 2s; --animDelay: 2s;">
 
                 <!-- Team members will appear here! (see team.js for further details) -->
 
                 <div class="teammate title">
-                    <img class="teammate_avatar" src="assets/img/artem_kuznetsov.jpg">
-                    <div class="teammate_info">
-                        <h1>Artem Kuznetsov</h1>
-                        <p>${description}</p>
-                        <p>${socials}</p>
-                    </div>
-                </div>     
-                <br>             
+                    <img class="teammate_avatar" src="assets/img/mikhail_beskin.jpg">
+                    <h1>Mikhail Beskin</h1>
+                    <p>Misha is a dude from Belarus. He's been doing programming and everything related to it for several years now. He wants to create the best organization in the world!</p>
+                    <p>[no links provided]</p>
+                </div>
+                <br>
 
                 <div class="teammate title">
                     <img class="teammate_avatar" src="assets/img/ivan_covach.jpg">
-                    <div class="teammate_info">
-                        <h1>Ivan Covach</h1>
-                        <p>I confuse left and right, punk, like math (definitely punk), bad at Russian writing, love rice👍.I'm on Arch - why? Because. I was born with a soldering iron in my hands. I've flown around the nearest star 17 times. I've seen a baby pigeon, I have personalized chopsticks, and I think I can program something.</p>
-                        <p>${socials}</p>
-                    </div>
+                    <h1>Ivan Covach</h1>
+                    <p>I confuse left and right, punk, like math (definitely punk), bad at Russian writing, love rice👍.I'm on Arch - why? Because. I was born with a soldering iron in my hands. I've flown around the nearest star 17 times. I've seen a baby pigeon, I have personalized chopsticks, and I think I can program something.</p>
+                    <p>[no links provided]</p>
                 </div>
                 <br>
+
+                <div class="teammate title">
+                    <img class="teammate_avatar" src="assets/img/nikolai_denisov.jpg">
+                    <h1>Nikolai Denisov</h1>
+                    <p>[no description provided]</p>
+                    <p>[no links provided]</p>
+                </div>
+                <br>            
                 
                 <div class="teammate title">
                     <img class="teammate_avatar" src="assets/img/ivan_movchan.jpg">
-                    <div class="teammate_info">
-                        <h1>Ivan Movchan</h1>
-                        <p>Developing free (as in freedom) software<br>
-                           Trying myself in web design and electronic music<br>
-                           By the way I use Arch Linux 😀</p>
-                        <p><a href="https://nobootrecord.github.io">https://nobootrecord.github.io</a></p>
-                    </div>
+                    <h1>Ivan Movchan</h1>
+                    <p>Programmer and Open Source enthusiast, trying myself in web design and electronic music, cats lover 🐱‍💻
+                    <p><a href="https://nobootrecord.github.io">https://nobootrecord.github.io</a></p>
                 </div> 
                 <br>  
 
                 <div class="teammate title">
-                    <img class="teammate_avatar" src="assets/img/nikolai_denisov.jpg">
-                    <div class="teammate_info">
-                        <h1>Nikolai Denisov</h1>
-                        <p>&lt;description not found&gt;</p>
-                        <p>${socials}</p>
-                    </div>
-                </div>
-                <br>
-
-                <div class="teammate title">
-                    <img class="teammate_avatar" src="assets/img/mikhail_beskin.jpg">
-                    <div class="teammate_info">
-                        <h1>Mikhail Beskin</h1>
-                        <p>Misha is a dude from Belarus. He's been doing programming and everything related to it for several years now. He wants to create the best organization in the world!</p>
-                        <p>${socials}</p>
-                    </div>
-                </div>
-                <br>
+                    <img class="teammate_avatar" src="assets/img/artem_kuznetsov.jpg">
+                    <h1>Artem Kuznetsov</h1>
+                    <p>[no description provided]</p>
+                    <p>[no links provided]</p>
+                </div>     
+                <br> 
 
             </center>
         </main>

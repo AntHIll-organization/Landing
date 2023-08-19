@@ -21,3 +21,8 @@ This CSS file describes everything about... animations :)
 }
 .fade_in { opacity: 0; animation: anim_fade var(--animDuration) var(--animDelay) 1 ease forwards; }
 .fade_out { opacity: 1; animation: anim_fade var(--animDuration) var(--animDelay) 1 ease forwards; }
+
+@keyframes anim_unblur {
+    to { opacity: 1; filter: blur(0px); }
+}
+.unblur { opacity: 0; filter: blur(20px); animation: anim_unblur var(--animDuration) var(--animDelay) 1 ease forwards; }

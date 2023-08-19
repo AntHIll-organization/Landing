@@ -20,8 +20,8 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Comfortaa', sans-serif; font-weight: 300;
     font-family: 'Comfortaa', sans-serif;
 }
 
-.website_title {
-    text-shadow: 0px 0px 8px var(--bgMain);
+.website_title, .website_title:hover, .website_title:active {
+    text-shadow: 0px 0px 16px var(--fgMain); color: inherit;
 }
 
 .small_title { font-size: 36px; }

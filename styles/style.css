@@ -9,11 +9,11 @@ This CSS file describes main webpage styles (header, footer, etc.)
     --trDeltaOut: 0.8s ease;
     --roundRadius: 30px;
     --roundFullRadius: 50%;
-    --padButtonV: 8px;
-    --padButtonH: 24px;
+    --padButtonV: 4px;
+    --padButtonH: 20px;
     --padPanel: 16px 16px;
     --mrgButtonV: 0px;
-    --mrgButtonH: 4px;
+    --mrgButtonH: 0px;
     --blurMain: blur(16px);
     --circleRadius: 40vw;
     --cubeSize: 20vw;
@@ -22,6 +22,7 @@ This CSS file describes main webpage styles (header, footer, etc.)
 body {
     margin: 0;
     background: var(--bgMain); color: var(--fgMain);
+    scroll-behavior: smooth;
 }
 
 header, footer { z-index: 1; }
@@ -38,22 +39,19 @@ footer {
 
 main {
     min-height: 200vh; padding: 10vw;
-    transition: 2s ease;
+    transition: 1s ease;
 }
 
-a { color: inherit; text-decoration: none; transition: var(--trDeltaOut); }
-a:hover { color: var(--fgHover); transition: var(--trDeltaIn); }
-a:active { color: var(--fgActive); transition: var(--trDeltaIn); }
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
 
 textarea { text-align: left; border: 1px solid var(--fgMain); }
 
 ::selection { background: var(--fgMain); color: var(--bgMain); }
 
-/* Light / dark theme */
+/* Light / dark theme (toggle by pressing "Theme" button */
 
-@media (prefers-color-scheme: light)
-{
-    :root {
+:root {
         --bgMain: white;
         --fgMain: black;
         --bgButton: #F0FFFF;
@@ -62,12 +60,9 @@ textarea { text-align: left; border: 1px solid var(--fgMain); }
         --bgButtonPanel: #F0FFFF80;
         --fgTerminal: #FF00FF;
         --bgSemiAlpha: #FFFFFF80;
-    }
 }
 
-@media (prefers-color-scheme: dark)
-{
-    :root {
+.darkmode {
         --bgMain: black;
         --fgMain: white;
         --bgButton: #171717;
@@ -76,14 +71,6 @@ textarea { text-align: left; border: 1px solid var(--fgMain); }
         --bgButtonPanel: #17171780;
         --fgTerminal: #00FF00;
         --bgSemiAlpha: #00000080;
-    }
-}
-
-:root {
-    --fgHover: blue;
-    --fgActive: magenta;
-    --candyGradient: linear-gradient(to right bottom, blue, magenta);
-    --rainbow: linear-gradient(to right bottom, red, yellow, lime, blue, cyan, magenta);
 }
 
 /* Scrollbar */
@@ -111,61 +98,50 @@ pre { font-family: 'JetBrains Mono', monospace; }
 
 /* Custom HTML5 elements */
 
+.inverse_text {
+    color: var(--bgMain); -webkit-text-stroke: 1px var(--fgMain);
+    transition: var(--trDeltaOut);
+}
+.inverse_text:hover {
+    color: var(--fgMain); -webkit-text-stroke: none;
+    transition: var(--trDeltaIn);
+}
+
+.box {
+    padding: 16px;
+    text-align: left;
+}
+
 .button, .grbutton, .menubutton {
-    padding: var(--padButtonV) var(--padButtonH); margin: var(--mrgButtonV) var(--mrgButtonH); user-select: none;
-    font-family: inherit; font-size: inherit;
+    padding: var(--padButtonV) var(--padButtonH); user-select: none; text-decoration: none;
+    font-family: inherit; font-size: 24px;
     text-align: center;
 }
 
 .button {
-    background: var(--bgButton); color: var(--fgMain);
+    background: var(--bgButton); color: var(--fgMain); text-decoration: none;
     transition: var(--trDeltaOut);
 }
 .button:hover {
-    background: var(--bgButtonHover); color: var(--fgMain);
+    background: var(--bgButtonHover); color: var(--fgMain); text-decoration: none;
     transition: var(--trDeltaIn);
 }
 .button:active {
-    background: var(--bgButtonActive); color: var(--fgMain);
+    background: var(--bgButtonActive); color: var(--fgMain); text-decoration: none;
     transition: var(--trDeltaIn);
-}
-
-.grbutton {
-    background: var(--candyGradient); color: var(--fgMain);
-    transition: var(--trDeltaOut);
-}
-.grbutton:hover {
-    color: var(--fgMain);
-    box-shadow: 0px 4px 32px var(--fgHover);
-    transition: var(--trDeltaIn);
-}
-.grbutton:active {
-    color: var(--fgMain);
-    box-shadow: 0px 8px 32px var(--fgActive);
-    transition: var(--trDeltaIn);
-}
-
-.grtext {
-    background: var(--candyGradient);
-    background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-}
-
-.rainbowtext {
-    background: var(--rainbow);
-    background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
 
 .menupanel {
-	padding: 8px; display: flex;
+    padding: 2px; display: flex;
     background: var(--fgMain);
 }
 
 .menubutton {
-    background: var(--fgMain); color: var(--bgMain);
+    background: var(--fgMain); color: var(--bgMain); text-decoration: none;
     transition: var(--trDeltaOut);
 }
-.menubutton:hover {
-    background: var(--bgMain); color: var(--fgMain);
+.active, .menubutton:hover {
+    background: var(--bgMain); color: var(--fgMain); text-decoration: none;
     transition: var(--trDeltaIn);    
 }
 
@@ -216,11 +192,12 @@ input[type=button] {
 .social { width: 48px; height: 48px; margin: 0px 8px; }
 
 .platform {
-    cursor: pointer; user-select: none;
-    position: relative;
-    width: 128px; height: 128px;
+    position: relative; width: 128px; height: 128px;
+    filter: drop-shadow(0px 0px 4px var(--fgMain));
     animation: anim_platform 1s var(--animDelay) infinite ease;
 }
+
+.social, .platform { cursor: pointer; user-select: none; }
 
 @keyframes anim_platform {
     0% { opacity: 0; }
@@ -256,120 +233,101 @@ Decorations
 
 .decor { z-index: -1; position: absolute; transform: translate(-50%, -50%); }
 
-.circle_navy
-{
-    width: 80vw; height: 80vw;
-    background: radial-gradient(circle at center, navy 1%, transparent 50%); background-size: 100vw 100vw; background-position: center; background-repeat: no-repeat;
-}
-
 /* 3D cube */
 
 .cube_cont {
     z-index: -1; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
     display: flex; justify-content: center; align-items: center;
-    perspective-origin: center;
-    animation: anim_cube_cont 30s 0s infinite ease;
+    perspective: calc(var(--cubeSize) * 3); perspective-origin: center;
 }
 
 .cube, .cube_side { width: var(--cubeSize); height: var(--cubeSize); user-select: none; }
 .cube {
     position: relative;
     transform-style: preserve-3d;
-    animation: anim_cube 60s 0s infinite ease;
+    animation: anim_cube 60s 0s infinite linear;
 }
 .cube_side {
-    position: absolute;
-    opacity: 1;
+    position: absolute; background: var(--bgSemiAlpha);
+    border: 1px solid var(--fgMain);
 }
 .cube_front {
-    background: var(--bgSemiAlpha); box-shadow: 0px 0px calc(var(--cubeSize) / 4) red; border: 1px solid red;
     transform: rotateY(0deg) translateZ(calc(var(--cubeSize) / 2));
 }
 .cube_back {
-    background: var(--bgSemiAlpha); box-shadow: 0px 0px calc(var(--cubeSize) / 4) cyan; border: 1px solid cyan;
     transform: rotateY(180deg) translateZ(calc(var(--cubeSize) / 2));
 }
 .cube_left {
-    background: var(--bgSemiAlpha); box-shadow: 0px 0px calc(var(--cubeSize) / 4) lime; border: 1px solid lime;
     transform: rotateY(-90deg) translateZ(calc(var(--cubeSize) / 2));
 }
 .cube_right {
-    background: var(--bgSemiAlpha); box-shadow: 0px 0px calc(var(--cubeSize) / 4) magenta; border: 1px solid magenta;
     transform: rotateY(90deg) translateZ(calc(var(--cubeSize) / 2));
 }
 .cube_top {
-    background: var(--bgSemiAlpha); box-shadow: 0px 0px calc(var(--cubeSize) / 4) blue; border: 1px solid blue;
     transform: rotateX(90deg) translateZ(calc(var(--cubeSize) / 2));
 }
 .cube_bottom {
-    background: var(--bgSemiAlpha); box-shadow: 0px 0px calc(var(--cubeSize) / 4) yellow; border: 1px solid yellow;
     transform: rotateX(-90deg) translateZ(calc(var(--cubeSize) / 2));
 }
 
 @keyframes anim_cube {
     to { transform: rotate3d(1, 1, 1, 720deg); }
 }
-@keyframes anim_cube_cont {
-    0% { perspective: calc(var(--cubeSize) / 9); }
-    50% { perspective: calc(var(--cubeSize) * 9); }
-    100% { perspective: calc(var(--cubeSize) / 9); }
-}
 
 /* Terminal.
-   See 'scripts/animations.js' for further details! */
+   See 'scripts/terminal.js' for further details! */
 
 .terminal {
-    width: 75vw; height: 25vh; padding: 16px;
+    overflow: hidden; padding: 16px; text-align: left;
     background: var(--bgMain); color: var(--fgTerminal);
-    box-shadow: 0px 0px 4px var(--fgMain); border-radius: var(--roundRadius);
-    transform: rotateX(var(--rotX)) rotateY(var(--rotY)) rotateZ(var(--rotZ));
+    text-shadow: 0px 0px 8px var(--fgTerminal);
+}
+.terminal_cursor {
+    animation: anim_terminal_cursor 0.5s 0s infinite ease;
+}
+@keyframes anim_terminal_cursor {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 .teammate {
-    width: 75vw; height: 256px; padding: 64px;
-    transform: scale(0.95);
-    display: flex;
-    background: var(--bgButtonPanel); color: var(--fgMain); backdrop-filter: var(--blurMain); border-radius: var(--roundRadius);
-    box-shadow: 0px 0px 8px var(--fgMain);
-    transition: var(--trDeltaOut);
-}
-.teammate:hover {
-    transform: scaleZ(1);
-    background: var(--bgMain); color: var(--fgMain);
-    box-shadow: 0px 0px 24px var(--fgMain);
-    transition: var(--trDeltaIn);    
+    width: 75vw; padding: 64px;
+    text-align: center;
 }
 .teammate_avatar {
-    position: absolute; left: 32px; top: 32px;
     width: 256px; height: 256px;
     border-radius: var(--roundFullRadius);
+    transition: var(--trDeltaOut);
 }
-.teammate_info { text-align: left; margin-left: 298px; margin-top: -48px; }
+.teammate_avatar:hover {
+    box-shadow: 0px 0px 40px var(--fgMain);
+    transition: var(--trDeltaIn);
+}
 
 /* Sign in/up form */
 
 .sign_form {
     z-index: 1;
-    position: absolute; top: 0; left: 0; width: 100%; height: 80vh;
-    transform: translateY(-80vh);
+    position: fixed; top: 0; left: 0; width: 100%; height: 80vh;
+    transform: translateY(-160vh);
     border-radius: 0 0 50% 50% / 0 0 100% 100%;
     background: var(--fgMain); color: var(--bgMain);
-    transition: 2s ease;
+    transition: 1s ease;
 }
 
 /* Windows :D */
 
 .window {
-    border-radius: var(--roundRadius);
-    border: var(--fgMain); box-shadow: 0px 0px 8px var(--fgMain);
+    border: var(--fgMain); box-shadow: 0px 0px 16px var(--fgMain);
     width: fit-content; height: fit-content;
 }
 .window_titlebar {
-    padding: 8px; border-radius: var(--roundRadius) var(--roundRadius) 0px 0px;
-    background: var(--candyGradient);
+    padding: 8px; text-align: center;
+    background: var(--fgMain); color: var(--bgMain);
 }
 .window_client {
-    padding: 4px;
+    padding: 16px;
     background: var(--bgMain); color: var(--fgMain);
 }
 
